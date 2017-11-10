@@ -39,7 +39,7 @@ int main() {
 
     infile >> porc >> n >> r;
 
-    while(!infile.eof()) {
+    while(infile) {
         if(porc == 'P' || porc == 'p') {
             ans = factRec(n) / factIter(n-r);
 
@@ -56,4 +56,9 @@ int main() {
 
         infile >> porc >> n >> r;
     }
+
+    infile.close();
+    outfile.close();
+
+    return 0;
 }
